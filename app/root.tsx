@@ -8,6 +8,12 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import styles from './styles/app.css';
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }]
+}
+
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
@@ -22,6 +28,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <h1 className="text-3xl font-bold underline">
+          Hello world!
+        </h1>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
